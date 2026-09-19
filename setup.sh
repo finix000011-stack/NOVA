@@ -2945,3 +2945,48 @@ npx prisma generate
 npx prisma migrate deploy
 npm run build
 npm start
+MDEOF
+
+# ============================================================
+#  .env.example
+# ============================================================
+cat > .env.example <<'EOF'
+DISCORD_TOKEN=
+OWNER_ID=
+DATABASE_URL=
+REDIS_URL=
+NODE_ENV=production
+SHARDING_ENABLED=false
+EOF
+
+# ============================================================
+#  .gitignore
+# ============================================================
+cat > .gitignore <<'EOF'
+node_modules/
+dist/
+.env
+*.log
+logs/
+.DS_Store
+EOF
+
+# ============================================================
+#  أوامر الختام
+# ============================================================
+cd ..
+chmod +x nova/setup.sh
+echo ""
+echo "==========================================="
+echo "🎉 NOVA project created successfully!"
+echo "==========================================="
+echo ""
+echo "Next steps:"
+echo "  cd nova"
+echo "  cp .env.example .env"
+echo "  # ضع DISCORD_TOKEN و OWNER_ID في .env"
+echo "  npm install"
+echo "  npx prisma generate"
+echo "  npx prisma migrate deploy"
+echo "  npm run build"
+echo "  npm start"
